@@ -1,0 +1,77 @@
+@@include(
+'./includes/0_header.html',
+{"webRoot": ".",
+"document-title": "توظيف",
+"page-id": "job_item"}
+)
+
+
+@@include('./includes/1_filter.html', {"webRoot": "."})
+<section class="back-btn">
+  <a href="./index.html" class="items-center">
+    <svg>
+      <use xlink:href=@@webRoot/assets/img/sprite.svg#arrow>
+        <title>Arrow back</title>
+    </svg>
+    <span>رجوع</span>
+  </a>
+</section>
+
+<section class="jobs-list">
+  <section class="card single-job">
+    <div class="card__header">
+      <div class="card__header__item">
+        <svg>
+          <use xlink:href=@@webRoot/assets/img/sprite.svg#job>
+            <title>Job</title>
+        </svg>
+        <span class="card__header__item__title">: الوظيفة</span>
+        <span>مصمم لدى وكالة اعلانية</span>
+      </div>
+      <div class="card__header__item">
+        <svg>
+          <use xlink:href=@@webRoot/assets/img/sprite.svg#location>
+            <title>location</title>
+        </svg>
+        <span class="card__header__item__title">: المدينة</span>
+        <span>الرياض</span>
+      </div>
+      <div class="card__header__item">
+        <svg>
+          <use xlink:href=@@webRoot/assets/img/sprite.svg#money>
+            <title>Money</title>
+        </svg>
+        <span class="card__header__item__title">: الراتب</span>
+        <span>7000 ريال</span>
+      </div>
+    </div>
+    <div class="card__body">
+      <div class="text-center title-wrapper">
+        <h6 class="card__body__title back_line">معلومات الوظيفة</h6>
+      </div>
+      <p>هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم
+        إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي
+        أخذتها من نص، لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف.</p>
+    </div>
+    <a href="#" class="btn btn-dark details-btn">
+      <span>جوال</span>
+      <svg>
+        <use xlink:href=@@webRoot/assets/img/sprite.svg#phone>
+          <title>phone</title>
+      </svg>
+    </a>
+    <a href="#" class="btn btn-dark details-btn">
+      <span>الموقع</span>
+      <svg>
+        <use xlink:href=@@webRoot/assets/img/sprite.svg#location-outline>
+          <title>Location</title>
+      </svg>
+    </a>
+  </section>
+  <div class="text-center more">
+    <a href="" class="more-link back_line">وظائف مشابهة</a>
+  </div>
+</section>
+
+
+@@include('./includes/scripts.html', {"webRoot": "."})
