@@ -11,8 +11,11 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png" />
 	<!-- Owl Carousel CSS -->
 <!-- Animate on Scroll CSS -->
-<link rel="stylesheet" href="./assets/css/aos.css" />
+<!-- <link rel="stylesheet" href="./assets/css/aos.css" /> -->
 <!-- Style -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.steps@1.1.2/dist/jquery-steps.min.css">
+
+<!-- <link rel="stylesheet" href="./assets/css/jquery-steps.css" /> -->
 <link rel="stylesheet" href="./assets/css/main.css" />
 
 	<title>توظيف</title>
@@ -51,36 +54,175 @@
   </a>
 </section>
 
+<nav class="flex items-center justify-center lang-tabs">
+  <button class="btn btn-light tab active">
+    عربي
+  </button>
+  <button class="btn btn-light tab">
+    English
+  </button>
+</nav>
+
 <section class="jobs-list">
   <section class="card create-card">
     <div class="card__header">
       <h6 class="card__header__title back_line">إنشاء سيرة ذاتية</h6>
     </div>
-    <form action="" class="form">
-      <div class="card__body">
-        <div class="form__input">
-          <input type="text" name="name" id="name">
-          <label for="name">الاسم</label>
+
+    <div class="card__body">
+      <form class="step-app form" id="form">
+        <ul class="step-steps">
+          <li data-step-target="step1">1</li>
+          <li data-step-target="step2">2</li>
+          <li data-step-target="step3">3</li>
+        </ul>
+        <div class="step-content">
+          <div class="step-tab-panel" data-step="step1">
+            <h6 class="step-tab-panel__title back_line">المعلومات الشخصية</h6>
+            <fieldset>
+              <div class="text-file flex items-center justify-between">
+                <div class="text">
+                  <div class="form__input">
+                    <input type="text" name="name" id="name">
+                    <label for="name">الاسم</label>
+                  </div>
+                  <div class="form__input">
+                    <input type="text" name="lastName" id="lastName">
+                    <label for="lastName">اسم العائلة</label>
+                  </div>
+                </div>
+                <div class="form__input custom-file">
+                  <input type="file" name="profilePic" id="profilePic" onchange="previewFile(this)">
+                  <label for="profilePic">رفع صورة شخصية</label>
+                  <img src="" alt="Profile Picture">
+                </div>
+              </div>
+              <div class="form__input">
+                <input type="text" name="birthdate" id="birthdate">
+                <label for="birthdate">تاريخ الميلاد</label>
+              </div>
+              <div class="form__input">
+                <input type="text" name="nationality" id="nationality">
+                <label for="nationality">الجنسية</label>
+              </div>
+              <div class="form__input">
+                <input type="text" name="socialStatus" id="socialStatus">
+                <label for="socialStatus">الحالة الإجتماعية</label>
+              </div>
+              <div class="form__input">
+                <input type="email" name="email" id="email">
+                <label for="email">البريد الإلكتروني</label>
+              </div>
+              <div class="form__input">
+                <input type="tel" name="phone" id="phone">
+                <label for="phone">رقم الهاتف</label>
+              </div>
+              <div class="form__input">
+                <select name="district" id="district">
+                  <option value="0" hidden>المنطقة</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+                <!-- <input type="" name="" id=""> -->
+                <!-- <label for="district">المنطقة</label> -->
+              </div>
+              <div class="form__input">
+                <input type="text" name="locationAddress" id="locationAddress">
+                <label for="locationAddress">العنوان</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="step-tab-panel" data-step="step2">
+            <h6 class="step-tab-panel__title back_line">المؤهلات العلمية والعملية</h6>
+            <fieldset>
+              <div class="sided-row">
+                <div class="form__input">
+                  <input type="text" name="name" id="name">
+                  <label for="name">الشهادة الدراسية</label>
+                </div>
+                <div class="form__input">
+                  <input type="text" name="lastName" id="lastName">
+                  <label for="lastName">مكان التخرج</label>
+                </div>
+              </div>
+              <div class="form__input">
+                <input type="text" name="birthdate" id="birthdate">
+                <label for="birthdate">دورات</label>
+              </div>
+            </fieldset>
+            <h6 class="step-tab-panel__title back_line">خبرات عملية</h6>
+            <fieldset>
+              <div class="sided-row">
+                <div class="form__input">
+                  <input type="text" name="name" id="name">
+                  <label for="name">مكان العمل</label>
+                </div>
+                <div class="form__input">
+                  <input type="text" name="lastName" id="lastName">
+                  <label for="lastName">المسمى الوظيفي</label>
+                </div>
+              </div>
+              <button type="button" class="add-more">
+                <span>إضافة المزيد</span>
+                <svg>
+                  <use xlink:href=./assets/img/sprite.svg#plus>
+                    <title>plus</title>
+                </svg>
+              </button>
+            </fieldset>
+            <h6 class="step-tab-panel__title back_line">مهارات</h6>
+            <fieldset>
+              <div class="sided-row">
+                <div class="form__input">
+                  <input type="text" name="name" id="name">
+                  <label for="name">المهارة</label>
+                </div>
+                <div class="form__input">
+                  <input type="text" name="lastName" id="lastName">
+                  <label for="lastName">المسمى الوظيفي</label>
+                </div>
+              </div>
+              <button type="button" class="add-more">
+                <span>إضافة المزيد</span>
+                <svg>
+                  <use xlink:href=./assets/img/sprite.svg#plus>
+                    <title>plus</title>
+                </svg>
+              </button>
+            </fieldset>
+          </div>
+          <div class="step-tab-panel" data-step="step3">
+            <h6 class="step-tab-panel__title back_line">تحميل السيرة الذاتية</h6>
+            <section>
+              <button class="download">تحميل</button>
+            </section>
+          </div>
         </div>
-        <div class="form__input">
-          <input type="email" name="email" id="email">
-          <label for="email">البريد</label>
+        <div class="step-footer">
+          <!-- <button data-step-action="prev" type="button" class="btn btn-dark">السابق</button> -->
+          <button data-step-action="next" type="button" class="btn btn-dark">التالي</button>
+          <button data-step-action="finish" type="submit" class="btn btn-dark">إرسال</button>
         </div>
-        <div class="form__input">
-          <input type="text" name="job" id="job">
-          <label for="job">الوظيفة</label>
-        </div>
-        <div class="form__input">
-          <input type="text" name="experience" id="experience">
-          <label for="experience">سنوات الخبرة</label>
-        </div>
-        <div class="form__input">
-          <textarea name="details" id="details"></textarea>
-          <label for="details">اكتب خبرات العمل والدورات</label>
-        </div>
-      </div>
-      <input type="submit" class="btn btn-dark" value="إنشاء">
-    </form>
+      </form>
+    </div>
+
+
+
+    <!-- <form id="create">
+      <h3>Keyboard</h3>
+      <fieldset>
+        <p>Try the keyboard navigation by clicking arrow left or right!</p>
+      </fieldset>
+      <h3>Effects</h3>
+      <fieldset>
+        <p>Wonderful transition effects.</p>
+      </fieldset>
+      <h3>Pager</h3>
+      <fieldset>
+        <p>The next and previous buttons help you to navigate through your content.</p>
+      </fieldset>
+    </form> -->
   </section>
 </section>
 
@@ -89,8 +231,10 @@
   <!-- end section loading -->
   <!-- jQuery JS -->
   <script src="./assets/js/jquery-3.5.1.min.js"></script>
+  <!-- <script src="./assets/js/jquery.steps.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery.steps@1.1.2/dist/jquery-steps.min.js"></script>
   <!-- Owl Carousel JS -->
   <!-- Animate on Scroll JS -->
-  <script src="./assets/js/aos.js"></script>
+  <!-- <script src="./assets/js/aos.js"></script> -->
   <script src="./assets/js/script.js"></script>
 </body>

@@ -6,6 +6,7 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: 'HelveticaNeueLT', Helvetica, sans-serif, serif, arial;
+	font-weight: 700;
 }
 
 html {
@@ -22,6 +23,7 @@ body {
 	color: color(dark);
 	background-color: color(white);
 	font-family: 'HelveticaNeueLT', Helvetica, sans-serif, serif, arial;
+	font-weight: 700;
 	position: relative;
 	overflow-x: hidden;
 	line-height: 2;
@@ -30,10 +32,7 @@ body {
 
 ::-webkit-scrollbar {
 	width: 8px;
-	height: 0;
-	@media (min-width: 768px) {
-		height: 8px;
-	}
+	height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -90,4 +89,12 @@ ol {
 img {
 	pointer-events: none;
 	user-select: none;
+}
+
+button{
+	cursor: pointer;
+}
+
+fieldset{
+	border: none;
 }

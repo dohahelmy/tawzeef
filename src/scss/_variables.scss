@@ -1,6 +1,7 @@
 /* ========== Colors ========== */
-$light:    #FFFFFF;
-$dark:  #3D7791;
+$light:#FFFFFF;
+$grey: #EDEEF5;
+$dark: #3D7791;
 
 
 @function color($name) {
@@ -8,15 +9,21 @@ $dark:  #3D7791;
 }
 
 :root {
-  --color-light:    #FFFFFF;
-  --color-dark:     #3D7791;
+  --color-light:#FFFFFF;
+  --color-grey: #EDEEF5;
+  --color-dark: #3D7791;
 }
 
 /* ========== Fonts ========== */
 
 @font-face {
   font-family: "HelveticaNeueLT";
-  src: url("../fonts/HelveticaNeueLTArabic-Bold.ttf");
+  src: url("../fonts/HelveticaNeueLT.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "HelveticaNeueLT";
+  src: url("../fonts/HelveticaNeueLT_B.otf");
   font-weight: 700;
 }
 

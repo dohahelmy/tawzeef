@@ -11,8 +11,11 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png" />
 	<!-- Owl Carousel CSS -->
 <!-- Animate on Scroll CSS -->
-<link rel="stylesheet" href="./assets/css/aos.css" />
+<!-- <link rel="stylesheet" href="./assets/css/aos.css" /> -->
 <!-- Style -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.steps@1.1.2/dist/jquery-steps.min.css">
+
+<!-- <link rel="stylesheet" href="./assets/css/jquery-steps.css" /> -->
 <link rel="stylesheet" href="./assets/css/main.css" />
 
 	<title>توظيف</title>
@@ -43,77 +46,88 @@
 
 <section>
   <section class="filter flex">
+    <button class="slide-btn" id="right-arrow">
+      <svg>
+        <use xlink:href=./assets/img/sprite.svg#arrow>
+          <title>Arrow down</title>
+      </svg>
+    </button>
+
     <!-- Dropdown -->
     <div class="dropdown">
-      <button class="dropdown__button btn btn-light tab" onclick="dropdown()">
+      <button class="dropdown__button btn btn-light tab">
         <span>كل المناطق</span>
         <svg>
           <use xlink:href=./assets/img/sprite.svg#arrow>
             <title>Arrow down</title>
         </svg>
       </button>
-  
+
       <div id="dropdown_menu" class="dropdown__menu">
-        
-          <button class="btn">اسم المنطقة</button>
-        
-          <button class="btn">اسم المنطقة</button>
-        
-          <button class="btn">اسم المنطقة</button>
-        
-          <button class="btn">اسم المنطقة</button>
-        
-          <button class="btn">اسم المنطقة</button>
-        
+         <button class="btn">اسم المنطقة 1</button>
+           <button class="btn">اسم المنطقة 2</button>
+           <button class="btn">اسم المنطقة 3</button>
+           <button class="btn">اسم المنطقة 4</button>
+           <button class="btn">اسم المنطقة 5</button>
+          
       </div>
-  
+
     </div>
-  
+
     <!-- Categories list -->
-    
+
     <div class="categories flex items-center">
       
+       
         <button class="tab btn btn-light categories__item">
           قسم 1
         </button>
-      
+       
         <button class="tab btn btn-light categories__item">
           قسم 2
         </button>
-      
+       
         <button class="tab btn btn-light categories__item">
           قسم 3
         </button>
-      
+       
         <button class="tab btn btn-light categories__item">
           قسم 4
         </button>
-      
+       
         <button class="tab btn btn-light categories__item">
           قسم 5
         </button>
-      
+       
         <button class="tab btn btn-light categories__item">
           قسم 6
         </button>
-      
+       
         <button class="tab btn btn-light categories__item">
           قسم 7
         </button>
-      
+       
         <button class="tab btn btn-light categories__item">
           قسم 8
         </button>
-      
+       
         <button class="tab btn btn-light categories__item">
           قسم 9
         </button>
-      
+       
         <button class="tab btn btn-light categories__item">
           قسم 10
         </button>
       
     </div>
+
+    
+    <button class="slide-btn" id="left-arrow">
+      <svg>
+        <use xlink:href=./assets/img/sprite.svg#arrow>
+          <title>Arrow down</title>
+      </svg>
+    </button>
   </section>
 
   <div class="filter__result">
@@ -196,8 +210,10 @@
   <!-- end section loading -->
   <!-- jQuery JS -->
   <script src="./assets/js/jquery-3.5.1.min.js"></script>
+  <!-- <script src="./assets/js/jquery.steps.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery.steps@1.1.2/dist/jquery-steps.min.js"></script>
   <!-- Owl Carousel JS -->
   <!-- Animate on Scroll JS -->
-  <script src="./assets/js/aos.js"></script>
+  <!-- <script src="./assets/js/aos.js"></script> -->
   <script src="./assets/js/script.js"></script>
 </body>
