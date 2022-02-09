@@ -1,25 +1,25 @@
 /* ========== General Classes ========== */
 .container {
-	padding: 0 15px;
+	padding: 0 3rem;
 	max-width: 100%;
 	width: 100%;
 	margin: 0 auto;
 
-	@media (min-width: $phones) {
-		max-width: 540px;
-	}
+	// @media (min-width: $phones) {
+	// 	max-width: 54rem;
+	// }
 
 	@media (min-width: $tablets) {
-		max-width: 720px;
+		max-width: 75rem;
 	}
 
 	@media (min-width: $desktops) {
-		max-width: 960px;
+		max-width: 96rem;
 	}
 
-	@media (min-width: $HD) {
-		max-width: 1140px;
-	}
+	// @media (min-width: $HD) {
+	// 	max-width: 114rem;
+	// }
 }
 
 // colors
@@ -53,11 +53,7 @@
 }
 
 .f14 {
-	font-size: 12px !important;
-
-	@media (min-width: $tablets) {
-		font-size: 14px !important;
-	}
+	font-size: 1.4rem;
 }
 
 .text-center {
@@ -139,17 +135,17 @@
 
 /* ========== Style SVG ========== */
 .resize-svg {
-	width: 24px;
-	height: 24px;
+	width: 2.4rem;
+	height: 2.4rem;
 }
 
 .title-icon {
-	width: 28px;
-	height: 28px;
+	width: 2.8rem;
+	height: 2.8rem;
 }
 
 .accent-svg {
-	height: 224px;
+	height: 22.4rem;
 }
 
 .svg-fill {

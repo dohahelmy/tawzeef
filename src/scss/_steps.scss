@@ -5,16 +5,17 @@
     justify-content: center;
 
     >li {
-      font-size: 1.5rem;
+      font-size: 2rem;
+      font-weight: 700;
       color: color(light);
-      width: 3rem;
-      height: 3rem;
+      width: 3.5rem;
+      height: 3.5rem;
       border-radius: 100%;
       text-align: center;
       line-height: 3rem;
       flex: 0 0 auto;
       padding: 0;
-      margin: 0 3rem;
+      margin: 0 4rem;
       position: relative;
       z-index: 0;
 
@@ -22,7 +23,7 @@
         position: absolute;
         z-index: -1;
         content: '';
-        width: 210%;
+        width: 235%;
         left: 100%;
         height: 1px;
         border-bottom: 1px dashed color(grey);
@@ -56,7 +57,7 @@
       &__title {
         display: inline;
         padding: 0 0.75rem;
-        font-size: 1.71rem;
+        font-size: 1.8rem;
         color: color(dark);
         background-color: color(light);
       }
@@ -71,6 +72,8 @@
     margin: 0;
     .btn{
       cursor: pointer;
+      padding-bottom: 0.5rem;
+      bottom: -1.8rem
     }
   }
 

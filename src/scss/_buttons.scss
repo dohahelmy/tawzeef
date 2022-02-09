@@ -3,12 +3,17 @@
   align-items: center;
   justify-content: center;
   border: none;
-  min-width: 6.2rem;
+  min-width: 6rem;
   border-radius: 4rem;
-  font-size: 1.5625rem;
+  font-size: 1.6rem;
   font-weight: 700;
   text-align: center;
   padding-bottom: 0.5rem;
+	letter-spacing: 1px;
+  span{
+    font-weight: 700;
+  }
+
 
   &-dark{
     color: color(light);
@@ -23,15 +28,13 @@
 }
 
 .tab{
-  width: 11.08rem;
-  height: 3.552rem;
-  font-size: 1.5625rem;
-  border-radius: 0.710227rem;
+  width: 11rem;
+  height: 3.5rem;
+  font-size: 1.4rem;
+  border-radius: 0.75rem;
   border: 1px solid color(dark);
   &.active{
     color: color(light);
     background-color: color(dark);
   }
 }
-
-

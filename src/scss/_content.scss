@@ -1,59 +1,63 @@
 .filter {
   position: relative;
   z-index: 1;
-  margin-top: 1.6rem;
+  margin-top: 3rem;
 
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    height: 3.552rem;
-    width: 5.54rem;
-    background-image: linear-gradient(to left, #FFF 30%, transparent);
-    top: 0;
-    right: 11.5rem;
-  }
-
+  &::before,
   &::after {
     content: '';
     position: absolute;
     z-index: 1;
-    height: 3.552rem;
-    width: 5.54rem;
-    background-image: linear-gradient(to right, #FFF 30%, transparent);
+    height: 3.6rem;
+    width: 5.5rem;
     top: 0;
+  }
+
+  &::before{
+    background-image: linear-gradient(to left, #FFF 30%, transparent);
+    right: 12.7rem;
+  }
+
+  &::after {
+    background-image: linear-gradient(to right, #FFF 30%, transparent);
     left: 0;
   }
 
   .slide-btn{
+    // display: none;
     z-index: 10;
     position: absolute;
     border: none;
     background-color: transparent;
-    width: 5.54rem;
-    height: 3.552rem;
+    width: 5.5rem;
+    height: 3.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    // @media (min-width: $phones) {
+    //   display: block;
+    // }
     svg{
       width: 1.5rem;
       height: 1.5rem;
     }
     &#right-arrow{
-      right: 11.7rem;
-      transform: rotate(180deg);
+      right: 12rem;
+      transform: scaleX(-1) translateY(-50%);
     }
     &#left-arrow{
-      left: -1rem;
+      left: -2rem;
     }
   }
 
   &__result {
-    margin-top: 2.841rem;
+    margin-top: 3rem;
 
     &__item {
       position: relative;
       color: color(dark);
       font-weight: 700;
       padding-right: 0.5rem;
-      margin-left: 3.55112rem;
+      margin-left: 3.5rem;
 
       &:before {
         content: '';
@@ -61,8 +65,9 @@
         top: 50%;
         transform: translateY(-50%);
         position: absolute;
-        width: 0.285rem;
-        height: 0.285rem;
+        width: 0.3rem;
+        height: 0.3rem;
+        border-radius: 100%;
         background-color: color(dark);
       }
     }
@@ -72,16 +77,18 @@
 .dropdown {
   position: relative;
   z-index: 0;
+  margin-left: 1rem;
+  border-left: 1px solid color(grey);
 
   &__button {
     cursor: pointer;
-    margin-left: 0.355113rem;
+    margin-left: 1.6rem;
 
     svg {
-      width: 0.711rem;
-      height: 0.711rem;
-      margin-top: 0.8rem;
-      margin-right: 0.15rem;
+      width: 1.2rem;
+      height: 1.2rem;
+      margin-top: 0.5rem;
+      margin-right: 0.5rem;
       transform: rotate(-90deg);
     }
   }
@@ -92,22 +99,29 @@
     z-index: 100;
     top: 100%;
     margin-top: 0.5rem;
-    width: 11.08rem;
+    // width: 11rem;
     min-height: 10rem;
-    padding: 0.5rem 0;
-    border-radius: 0.710227rem;
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
     border: 1px solid color(dark);
     background-color: color(light);
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    &::-webkit-scrollbar-thumb {
+      border-end-end-radius: 0.75rem;
+      border-start-end-radius: 0.75rem;
+    }
 
     .btn {
       cursor: pointer;
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       color: color(dark);
       width: 100%;
       padding: 0 1rem;
       background-color: color(light);
       border-radius: 0;
+      white-space: nowrap;
 
       &:hover,
       &:focus {
@@ -121,125 +135,146 @@
 .categories {
   position: relative;
   z-index: 0;
-  overflow-x: hidden;
-  margin: 0 4rem;
+  overflow-x: auto;
+  padding: 0 2.5rem;
+  &::-webkit-scrollbar {
+    height: 0;
+  }
 
   &__item {
     flex-shrink: 0;
-    margin: 0 0.355113rem;
+    margin: 0 0.25rem;
     cursor: pointer;
   }
 }
 
 
 .create-btn {
-  margin-top: 2.415rem;
+  margin-top: 3rem;
 
   .btn {
-    padding: 0;
-    width: 11.08rem;
-    height: 3.553rem;
-    font-size: 0.86rem;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
 
     svg {
       fill: currentColor;
-      width: 1.421rem;
-      height: 1.421rem;
-      margin-left: 0.710227rem;
+      width: 1.4rem;
+      height: 1.4rem;
+      margin-top: 0.5rem;
+      margin-left: 0.5rem;
     }
   }
 }
 
 .jobs-list {
-  margin-top: 3.267rem;
+  margin-top: 3rem;
 }
 
 
 .card {
-  font-size: 0.86rem;
+  font-size: 1.4rem;
   margin-bottom: 5.4rem;
   position: relative;
   z-index: 0;
 
   &__header {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    // align-items: ;
+    flex-direction: column;
     background-color: color(dark);
     color: color(light);
-    border-top-left-radius: 0.427rem;
-    border-top-right-radius: 0.427rem;
-    padding: 1.279rem 1.17rem 1rem 4.262rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    padding: 1.2rem 2rem;
+    @media (min-width: $xs-phones) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @media (min-width: $tablets) {
+      padding: 1.2rem 4rem;
+    }
 
     &__item {
       display: flex;
       align-items: center;
+      margin-bottom: 1rem;
+      @media (min-width: $xs-phones) {
+        margin-bottom: 0;
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
 
       svg {
-        width: 1rem;
-        height: 0.853rem;
+        width: 1.4rem;
+        height: 1.4rem;
+        margin-top: 0.25rem;
+        margin-left: 0.7rem;
       }
 
       &__title {
-        font-size: 1.137rem;
-        margin-left: 0.710227rem;
+        font-weight: 700;
+        margin-left: 1rem;
       }
     }
   }
 
   &__body {
-    line-height: 1.12rem;
+    line-height: 2.8rem;
     color: color(dark);
     background-color: color(light);
     border: 1px solid color(dark);
-    padding: 1rem 1.6rem 4.262rem;
-    border-bottom-left-radius: 0.427rem;
-    border-bottom-right-radius: 0.427rem;
+    padding: 2rem 2rem 4rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    @media (min-width: $tablets) {
+      padding: 2rem 4rem 4rem;
+    }
 
     .title-wrapper {
-      margin-bottom: 1.14rem;
+      margin-bottom: 1.6rem;
     }
 
     &__title {
       display: inline;
-      padding: 0 0.5rem;
-      font-size: 1.137rem;
+      padding: 0 0.75rem;
+      font-size: 1.8rem;
       background-color: color(light);
     }
   }
 
   .btn {
-    height: 2.5rem;
+    height: 3rem;
     padding-bottom: 0.5rem;
-    width: 8.24rem;
-    border-radius: 0.427rem;
+    width: 11rem;
+    border-radius: 0.5rem;
     position: absolute;
-    bottom: -1.05rem;
+    bottom: -1.5rem;
     left: 2rem;
   }
 }
 
 .single-job {
   .card__body {
-    min-height: 31.25rem;
+    min-height: 30rem;
   }
 }
 
 .create-card {
   .card__header {
-    padding: 1.279rem 1.17rem;
     display: block;
     text-align: center;
 
     &__title {
       display: inline;
+      letter-spacing: 1px;
       padding: 0 0.75rem;
-      font-size: 1.71rem;
+      font-size: 1.8rem;
       color: color(light);
       background-color: color(dark);
 
       &.back_line {
-
         &:before,
         &:after {
           background-color: color(light);
@@ -254,48 +289,59 @@
 }
 
 .more {
-  margin-top: 14.8rem;
-  margin-bottom: 5rem;
+  margin-top: 15rem;
+  margin-bottom: 4rem;
 
   &-link {
+    font-weight: 700;
     color: color(dark);
     background-color: color(light);
-    padding: 0 0.35rem;
+    padding: 0 0.5rem;
 
     &:focus,
     &:hover {
-      text-decoration: underline;
+      &::before,
+      &::after{
+        width: 0;
+      }
+      border-radius: 0.5rem;
+      padding: 0 2.5rem;
+      color: color(light);
+      background-color: color(dark);
     }
   }
 }
 
 .details-btn {
   &:first-of-type {
-    transform: translateX(10rem);
+    transform: translateX(12rem);
   }
 
   svg {
-    margin-right: 0.710227rem;
-    width: 1rem;
-    height: 0.853rem;
+    margin-top: 0.5rem;
+    margin-right: 0.75rem;
+    width: 1.4rem;
+    height: 1.4rem;
   }
 }
 
 
 .back-btn {
-  margin-top: 3.267rem;
+  margin-top: 3rem;
 
   a {
     display: inline-flex;
-    font-size: 1.28rem;
     color: color(dark);
+    span{
+      font-weight: 700;
+    }
   }
 
   svg {
-    margin-top: 0.5rem;
-    width: 1.35rem;
-    height: 1.35rem;
-    margin-left: 0.57rem;
+    margin-top: 1rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-left: 0.75rem;
     transform: rotate(180deg);
   }
 }
@@ -321,13 +367,12 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 1.71rem;
-      transition: all 0.25s linear;
+      font-size: 1.8rem;
 
-      &[for=details] {
-        top: 2.64rem;
-        transform: translateX(-50%);
-      }
+      // &[for=details] {
+      //   top: 2.64rem;
+      //   transform: translateX(-50%);
+      // }
     }
 
     input,
@@ -335,19 +380,19 @@
     select {
       text-align: center;
       padding: 0 2.5rem;
-      font-size: 1.71rem;
+      font-size: 1.6rem;
       width: 100%;
-      height: 6.82rem;
+      height: 7rem;
       background-color: color(grey);
       border: none;
-      border-radius: 4.41rem;
+      border-radius: 5rem;
 
       &:focus {
         outline: 1px solid color(dark);
         transition: all 0.25s linear;
 
         ~label {
-          top: 1.5rem;
+          top: 1rem;
           font-size: 1rem;
           color: color(dark);
         }
@@ -356,25 +401,40 @@
 
     textarea {
       resize: vertical;
-      height: 23.32rem;
+      height: 24rem;
     }
   }
 
+  .text-file{
+    display: flex;
+    flex-direction: column-reverse;
+    @media (min-width: $xs-phones) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+  }
+
   .custom-file{
-    cursor: pointer;
-    height: 15rem;
-    margin-right: 2rem;
+    height: 15.2rem;
     border: 2px dashed color(grey);
     border-radius: 2rem;
     position: relative;
+    @media (min-width: $xs-phones) {
+      margin-right: 2rem;
+    }
     input[type="file"]{
+      // cursor: pointer;
       height: 100%;
       opacity: 0;
       background-color: color(light);
+      &:hover,
       &:focus{
         ~ label{
+          cursor: pointer;
           top: 50%;
-          font-size: 1.71rem;
+          font-size: 1.8rem;
           color: #B1B1B1;
         }
       }
@@ -403,14 +463,21 @@
 
   .sided-row {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 -1rem;
-
+    flex-direction: column;
+    @media (min-width: $xs-phones) {
+      margin: 0 -1rem;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    
     .form__input {
       width: 100%;
-      margin-right: 1rem;
-      margin-left: 1rem;
+      @media (min-width: $xs-phones) {
+        margin-right: 1rem;
+        margin-left: 1rem;
+      }
     }
   }
 
@@ -419,21 +486,26 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     border: none;
     background-color: transparent;
     color: color(dark);
+    span{
+      font-weight: 700;
+    }
 
     svg {
       fill: currentColor;
-      width: 1.421rem;
-      height: 1.421rem;
-      margin-right: 0.710227rem;
+      width: 1.4rem;
+      height: 1.4rem;
+      margin-right: 0.75rem;
       margin-top: 0.5rem;
     }
   }
 
   .download{
+    font-size: 2rem;
+    font-weight: 700;
     margin: 5rem 0;
     border: none;
     background-color: transparent;
