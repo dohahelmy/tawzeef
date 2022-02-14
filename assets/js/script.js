@@ -1,4 +1,10 @@
-$(function () { // Dropdown toggle
+$(function () {
+  $("#modal-btn, .modal-close").click(function () {
+    $("body, .modal-dialog, .modal").toggleClass("active");
+  });
+
+
+  // Dropdown toggle
   $('.dropdown__button').click(function () {
     $(this).next('.dropdown__menu').slideToggle();
   });
@@ -33,10 +39,23 @@ $(function () { // Dropdown toggle
     // $(".tab").addClass("active"); // instead of this do the below 
     $(this).addClass("active");
   });
+
+  // const input_field = $('.form__input input');
+  // const textarea_field = $('.form__input textarea');
+  // const select_field = $('.form__input select');
+  // if(input_field.val || textarea_field.val || select_field.val){
+  //   $(this).
+  // }
+
 });
 
 
-$('#form').steps({
+$('#ar_form').steps({
+  onFinish: function () {
+    alert('complete');
+  }
+});
+$('#en_form').steps({
   onFinish: function () {
     alert('complete');
   }
@@ -59,3 +78,14 @@ $('.add-more').on('click', function () {
   let row = $(this).siblings('.sided-row').clone();
   row.insertBefore($(this));
 })
+
+
+// Create CV form tabs
+$('.lang-tabs .tab').click(function () {
+  let t = $(this).attr('id');
+  $('.lang-tabs .tab').removeClass('active');
+  $(this).addClass('active');
+
+  $('.create-card').hide();
+  $('#' + t + '_content').fadeIn('slow');
+});

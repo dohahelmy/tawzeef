@@ -42,12 +42,15 @@ html {
 body {
   font-size: 1.6rem;
   color: var(--color-dark);
-  background-color: var(--color-white);
+  background-color: var(--color-light);
   font-family: "HelveticaNeueLT", Helvetica, sans-serif, serif, arial;
   font-weight: 500;
   position: relative;
   overflow-x: hidden;
   line-height: 2;
+}
+body.active {
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -62,21 +65,6 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: var(--color-dark);
   outline: 1px solid var(--color-dark);
-}
-
-::-moz-selection {
-  background: var(--color-primary);
-  color: var(--color-white);
-}
-
-::selection {
-  background: var(--color-primary);
-  color: var(--color-white);
-}
-
-::-moz-selection {
-  background: var(--color-primary);
-  color: var(--color-white);
 }
 
 :focus {
@@ -281,6 +269,7 @@ fieldset {
 }
 
 .btn {
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -292,9 +281,14 @@ fieldset {
   text-align: center;
   padding-bottom: 0.5rem;
   letter-spacing: 1px;
+  position: relative;
 }
 .btn span {
   font-weight: 700;
+}
+.btn:focus, .btn:hover {
+  top: -1px;
+  left: -1px;
 }
 .btn-dark {
   color: var(--color-light);
@@ -389,9 +383,108 @@ header .container {
   background: no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18.002' height='15.753' viewBox='0 0 18.002 15.753'%3E%3Cg id='arrow-left-short' transform='translate(-8.998 -10.123)'%3E%3Cpath id='Path_6' data-name='Path 6' d='M17.672,10.454a1.125,1.125,0,0,1,0,1.593L11.716,18l5.956,5.954a1.126,1.126,0,0,1-1.593,1.593L9.329,18.8a1.125,1.125,0,0,1,0-1.593l6.75-6.75a1.125,1.125,0,0,1,1.593,0Z' fill='%233d7791' fill-rule='evenodd'/%3E%3Cpath id='Path_7' data-name='Path 7' d='M10.125,18a1.125,1.125,0,0,1,1.125-1.125H25.875a1.125,1.125,0,0,1,0,2.25H11.25A1.125,1.125,0,0,1,10.125,18Z' fill='%233d7791' fill-rule='evenodd'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
 
+.modal {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+}
+.modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-dialog {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  padding: 0 2rem;
+  display: grid;
+  place-items: center;
+}
+.modal-body {
+  max-width: 40rem;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 1.25rem;
+  background-color: var(--color-light);
+  box-shadow: 0 0 10px black;
+}
+.modal-header {
+  text-align: center;
+  padding: 4rem;
+  border-start-start-radius: 1.25rem;
+  border-start-end-radius: 1.25rem;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  display: grid;
+  place-items: center;
+}
+.modal-header .logo {
+  width: 20rem;
+  height: 6rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.modal-header .desc {
+  margin-top: 1rem;
+  opacity: 0.65;
+}
+.modal-content {
+  padding: 4rem;
+  border-end-start-radius: 1.25rem;
+  border-end-end-radius: 1.25rem;
+}
+.modal-content form label {
+  font-weight: 700;
+}
+.modal-content form .btns {
+  margin: 2.6rem -0.5rem 0;
+}
+.modal-content form .btn {
+  flex-grow: 1;
+  margin: 0 0.5rem;
+}
+
+.radio-input {
+  display: inline-flex;
+  align-items: center;
+  -webkit-margin-end: 3rem;
+          margin-inline-end: 3rem;
+  margin-bottom: 1rem;
+}
+.radio-input label {
+  font-weight: 500 !important;
+}
+.radio-input [type=radio] {
+  margin-top: 0.3rem;
+  -webkit-margin-end: 0.5rem;
+          margin-inline-end: 0.5rem;
+}
+.radio-input:last-child {
+  -webkit-margin-end: 0;
+          margin-inline-end: 0;
+}
+
+.input-box {
+  margin-bottom: 1.6rem;
+}
+.input-box label {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+.input-box input {
+  width: 100%;
+  padding: 0.25rem 1rem;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-dark);
+}
+
 .filter {
   position: relative;
-  z-index: 1;
+  z-index: 0;
   margin-top: 3rem;
 }
 .filter::before, .filter::after {
@@ -620,6 +713,11 @@ header .container {
   bottom: -1.5rem;
   left: 2rem;
 }
+.card .btn:focus, .card .btn:hover {
+  left: 2.5rem;
+  top: unset;
+  bottom: -1.5rem;
+}
 
 .single-job .card__body {
   min-height: 30rem;
@@ -725,18 +823,35 @@ header .container {
   border: none;
   border-radius: 5rem;
 }
-.form__input input:focus,
+.form__input input:active, .form__input input:visited, .form__input input:focus,
+.form__input textarea:active,
+.form__input textarea:visited,
 .form__input textarea:focus,
+.form__input select:active,
+.form__input select:visited,
 .form__input select:focus {
   outline: 1px solid var(--color-dark);
   transition: all 0.25s linear;
 }
-.form__input input:focus ~ label,
+.form__input input:active ~ label, .form__input input:visited ~ label, .form__input input:focus ~ label,
+.form__input textarea:active ~ label,
+.form__input textarea:visited ~ label,
 .form__input textarea:focus ~ label,
+.form__input select:active ~ label,
+.form__input select:visited ~ label,
 .form__input select:focus ~ label {
   top: 1rem;
   font-size: 1rem;
   color: var(--color-dark);
+}
+.form__input select {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+}
+.form__input select::-ms-expand {
+  display: none;
 }
 .form__input textarea {
   resize: vertical;
@@ -755,7 +870,7 @@ header .container {
 }
 .form .custom-file {
   height: 15.2rem;
-  border: 2px dashed var(--color-grey);
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23EDEEF5FF' stroke-width='5' stroke-dasharray='6%2c 15' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
   border-radius: 2rem;
   position: relative;
 }
@@ -842,6 +957,31 @@ header .container {
   border: none;
   background-color: transparent;
   color: var(--color-dark);
+}
+
+#en_content {
+  display: none;
+}
+#en_form {
+  direction: ltr;
+}
+#en_form .step-steps > li:before {
+  right: 100%;
+  left: unset;
+}
+@media (min-width: 445px) {
+  #en_form .custom-file {
+    margin-right: 0;
+    margin-left: 2rem;
+  }
+}
+#en_form .add-more svg {
+  margin-right: 0;
+  margin-left: 0.75rem;
+}
+#en_form .btn {
+  left: unset;
+  right: 2rem;
 }
 
 .step-app {
