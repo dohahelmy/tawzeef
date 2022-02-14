@@ -22,12 +22,15 @@ html {
 body {
 	font-size: 1.6rem;
 	color: color(dark);
-	background-color: color(white);
+	background-color: color(light);
 	font-family: 'HelveticaNeueLT', Helvetica, sans-serif, serif, arial;
 	font-weight: 500;
 	position: relative;
 	overflow-x: hidden;
 	line-height: 2;
+	&.active{
+		overflow: hidden;
+	}
 }
 
 ::-webkit-scrollbar {
@@ -44,15 +47,15 @@ body {
 	outline: 1px solid color(dark);
 }
 
-::selection {
-	background: color(primary);
-	color: color(white);
-}
+// ::selection {
+// 	background: color(primary);
+// 	color: color(white);
+// }
 
-::-moz-selection {
-	background: color(primary);
-	color: color(white);
-}
+// ::-moz-selection {
+// 	background: color(primary);
+// 	color: color(white);
+// }
 
 :focus {
 	outline: 1px solid color(dark);
