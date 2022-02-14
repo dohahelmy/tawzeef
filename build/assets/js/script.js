@@ -1,11 +1,9 @@
-
-
-$(function () { 
+$(function () {
   $("#modal-btn, .modal-close").click(function () {
     $("body, .modal-dialog, .modal").toggleClass("active");
   });
-  
-  
+
+
   // Dropdown toggle
   $('.dropdown__button').click(function () {
     $(this).next('.dropdown__menu').slideToggle();
@@ -41,6 +39,14 @@ $(function () {
     // $(".tab").addClass("active"); // instead of this do the below 
     $(this).addClass("active");
   });
+
+  // const input_field = $('.form__input input');
+  // const textarea_field = $('.form__input textarea');
+  // const select_field = $('.form__input select');
+  // if(input_field.val || textarea_field.val || select_field.val){
+  //   $(this).
+  // }
+
 });
 
 

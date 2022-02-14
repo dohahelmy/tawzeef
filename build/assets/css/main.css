@@ -823,18 +823,35 @@ header .container {
   border: none;
   border-radius: 5rem;
 }
-.form__input input:focus,
+.form__input input:active, .form__input input:visited, .form__input input:focus,
+.form__input textarea:active,
+.form__input textarea:visited,
 .form__input textarea:focus,
+.form__input select:active,
+.form__input select:visited,
 .form__input select:focus {
   outline: 1px solid var(--color-dark);
   transition: all 0.25s linear;
 }
-.form__input input:focus ~ label,
+.form__input input:active ~ label, .form__input input:visited ~ label, .form__input input:focus ~ label,
+.form__input textarea:active ~ label,
+.form__input textarea:visited ~ label,
 .form__input textarea:focus ~ label,
+.form__input select:active ~ label,
+.form__input select:visited ~ label,
 .form__input select:focus ~ label {
   top: 1rem;
   font-size: 1rem;
   color: var(--color-dark);
+}
+.form__input select {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+}
+.form__input select::-ms-expand {
+  display: none;
 }
 .form__input textarea {
   resize: vertical;
