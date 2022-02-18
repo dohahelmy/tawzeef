@@ -135,7 +135,13 @@
                 </div>
                 <div class="form__input custom-file">
                   <input type="file" name="profilePic" id="profilePic" onchange="previewFile(this)">
-                  <label for="profilePic">رفع صورة شخصية</label>
+                  <label for="profilePic" class="flex flex-column items-center justify-center">
+                    <svg class="resize-svg">
+                      <use xlink:href=./assets/img/sprite.svg#upload>
+                        <title>upload</title>
+                    </svg>
+                    <span>رفع صورة شخصية</span>
+                  </label>
                   <img src="" alt="Profile Picture">
                 </div>
               </div>
@@ -237,7 +243,13 @@
           <div class="step-tab-panel" data-step="step3">
             <h6 class="step-tab-panel__title back_line">تحميل السيرة الذاتية</h6>
             <section>
-              <button class="download">تحميل</button>
+              <button class="download flex flex-column items-center justify-center">
+                <span>تحميل</span>
+                <svg style="width: 10rem; height: 10rem">
+                  <use xlink:href=./assets/img/sprite.svg#download>
+                    <title>download</title>
+                </svg>
+              </button>
             </section>
           </div>
         </div>
@@ -280,7 +292,13 @@
                 </div>
                 <div class="form__input custom-file">
                   <input type="file" name="profilePic" id="profilePic" onchange="previewFile(this)">
-                  <label for="profilePic">Upload personal image</label>
+                  <label for="profilePic" class="flex flex-column items-center justify-center">
+                    <svg class="resize-svg">
+                      <use xlink:href=./assets/img/sprite.svg#upload>
+                        <title>upload</title>
+                    </svg>
+                    <span>Upload personal image</span>
+                  </label>
                   <img src="" alt="Profile Picture">
                 </div>
               </div>
@@ -382,7 +400,13 @@
           <div class="step-tab-panel" data-step="step3">
             <h6 class="step-tab-panel__title back_line">Download CV</h6>
             <section>
-              <button class="download">Download</button>
+              <button class="download flex flex-column items-center justify-center">
+                <span>Download</span>
+                <svg style="width: 10rem; height: 10rem">
+                  <use xlink:href=./assets/img/sprite.svg#download>
+                    <title>download</title>
+                </svg>
+              </button>
             </section>
           </div>
         </div>

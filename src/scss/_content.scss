@@ -696,12 +696,19 @@
   }
 
   .download {
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 5rem 0;
+    margin: 5rem auto;
     border: none;
     background-color: transparent;
     color: color(dark);
+    svg{
+      width: 10rem;
+      height: 10rem;
+      margin-top: 1rem;
+    }
+    span{
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
   }
 }
 
