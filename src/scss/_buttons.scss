@@ -37,7 +37,8 @@
 }
 
 .tab {
-  width: 11rem;
+  min-width: 11rem;
+  padding: 0 1.25rem;
   height: 3.5rem;
   font-size: 1.4rem;
   border-radius: 0.75rem;

@@ -85,7 +85,7 @@
 	<main role="main" class="container" id="job_item">
 
 
-<section>
+<section class="filter-container">
   <section class="filter flex">
     <button class="slide-btn" id="right-arrow">
       <svg>
@@ -105,11 +105,16 @@
       </button>
 
       <div id="dropdown_menu" class="dropdown__menu">
-         <button class="btn">اسم المنطقة 1</button>
-           <button class="btn">اسم المنطقة 2</button>
-           <button class="btn">اسم المنطقة 3</button>
-           <button class="btn">اسم المنطقة 4</button>
-           <button class="btn">اسم المنطقة 5</button>
+         <button class="btn" onclick="changeOption(this, '#location')">اسم
+          المنطقة 1</button>
+           <button class="btn" onclick="changeOption(this, '#location')">اسم
+          المنطقة 2</button>
+           <button class="btn" onclick="changeOption(this, '#location')">اسم
+          المنطقة 3</button>
+           <button class="btn" onclick="changeOption(this, '#location')">اسم
+          المنطقة 4</button>
+           <button class="btn" onclick="changeOption(this, '#location')">اسم
+          المنطقة 5</button>
           
       </div>
 
@@ -118,51 +123,41 @@
     <!-- Categories list -->
 
     <div class="categories flex items-center">
-      
-       
-        <button class="tab btn btn-light categories__item">
-          قسم 1
+
+       <button class="tab btn btn-light categories__item" onclick="changeOption(this, '#job')">
+        قسم 1
         </button>
-       
-        <button class="tab btn btn-light categories__item">
-          قسم 2
+         <button class="tab btn btn-light categories__item" onclick="changeOption(this, '#job')">
+        قسم 2
         </button>
-       
-        <button class="tab btn btn-light categories__item">
-          قسم 3
+         <button class="tab btn btn-light categories__item" onclick="changeOption(this, '#job')">
+        قسم 3
         </button>
-       
-        <button class="tab btn btn-light categories__item">
-          قسم 4
+         <button class="tab btn btn-light categories__item" onclick="changeOption(this, '#job')">
+        قسم 4
         </button>
-       
-        <button class="tab btn btn-light categories__item">
-          قسم 5
+         <button class="tab btn btn-light categories__item" onclick="changeOption(this, '#job')">
+        قسم 5
         </button>
-       
-        <button class="tab btn btn-light categories__item">
-          قسم 6
+         <button class="tab btn btn-light categories__item" onclick="changeOption(this, '#job')">
+        قسم 6
         </button>
-       
-        <button class="tab btn btn-light categories__item">
-          قسم 7
+         <button class="tab btn btn-light categories__item" onclick="changeOption(this, '#job')">
+        قسم 7
         </button>
-       
-        <button class="tab btn btn-light categories__item">
-          قسم 8
+         <button class="tab btn btn-light categories__item" onclick="changeOption(this, '#job')">
+        قسم 8
         </button>
-       
-        <button class="tab btn btn-light categories__item">
-          قسم 9
+         <button class="tab btn btn-light categories__item" onclick="changeOption(this, '#job')">
+        قسم 9
         </button>
-       
-        <button class="tab btn btn-light categories__item">
-          قسم 10
+         <button class="tab btn btn-light categories__item" onclick="changeOption(this, '#job')">
+        قسم 10
         </button>
-      
+        
     </div>
 
-    
+
     <button class="slide-btn" id="left-arrow">
       <svg>
         <use xlink:href=./assets/img/sprite.svg#arrow>
@@ -173,10 +168,10 @@
 
   <div class="filter__result">
     <span class="filter__result__item">
-      المنطقة: الرياض
+      المنطقة: <span id="location">الرياض</span>
     </span>
     <span class="filter__result__item">
-      الوظيفة: الكل
+      الوظيفة: <span id="job">الكل</span>
     </span>
   </div>
 </section>
